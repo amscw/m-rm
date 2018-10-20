@@ -59,7 +59,7 @@ all: m-rm.elf secondary-outputs
 m-rm.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross ARM GNU C++ Linker'
-	arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T "S:\puma\firmware\m-rm\STM32F30x_StdPeriph_Driver\STM32F301K8_FLASH.ld" -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"m-rm.map" --specs=nano.specs -o "m-rm.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T "M:\git\m-rm\STM32F30x_StdPeriph_Driver\STM32F301K8_FLASH.ld" -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"m-rm.map" --specs=nano.specs -o "m-rm.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
